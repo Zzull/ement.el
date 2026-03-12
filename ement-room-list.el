@@ -789,7 +789,9 @@ left."
   (with-current-buffer "*Ement Room List*"
     ;; FIXME: This caching of the visibility only supports the main buffer with the
     ;; default name, not any special ones with different names.
-    (setf ement-room-list-visibility-cache magit-section-visibility-cache))
+    (setf ement-room-list-visibility-cache magit-section-visibility-cache)
+    (setq-local ement-room-list-timestamp-colors
+                (ement-room-list--timestamp-colors)))
   (ement-room-list :display-buffer-action nil))
 
 (defun ement-room-list-kill-buffer (room)
